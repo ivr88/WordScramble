@@ -82,11 +82,11 @@ struct ContentView: View {
     }
     
     func userScoreCount(word: String) -> Bool {
-        if word == newWord {
-            userScore += 1
-            return true
+        guard word == newWord else {
+            return false
         }
-        return false
+        userScore += 1
+        return true
     }
     
     func isSame(word: String) -> Bool {
